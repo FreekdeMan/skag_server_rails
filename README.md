@@ -43,6 +43,11 @@ How do I get started?
     rvm gemset list
     ```
 
+    * Fix Bin directory
+    ```
+    rake rails:update:bin
+    ```
+
 2. Download the application from [GitHub](https://github.com/googleads/google-api-ads-ruby).
 
 3. Clone the directory adwords_on_rails
