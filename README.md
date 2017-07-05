@@ -42,11 +42,13 @@ How do I get started?
 
 5. Install all required dependencies using bundle:
 
-    $ bundle install
+    $ bundle install -V
 
-6. Initialize default local SQLite schema:
+6.1 Open PostgreSQL
 
-    $ rails db:migrate
+6.2 Initialize local PostgreSQL schema:
+
+    $ rails db:create db:migrate RAILS_ENV="development"
 
 7. Configure AdWords API settings:
 
