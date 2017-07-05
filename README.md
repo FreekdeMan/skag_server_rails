@@ -26,41 +26,73 @@ developers and to demonstrate some of the core functionality in the API.
 How do I get started?
 ---------------------
 
-1. Make sure you have Ruby 2.2 or later installed:
+1. Check you have Ruby 2.2 or later installed:
 
-    $ ruby -v
-    ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-linux]
+    * Update RubyGems http://railsapps.github.io/updating-rails.html
+    ```
+    gem -v
+    gem update --system
+    ```
+
+    * Create Gemset with RVM
+    ```
+    ruby -v
+    rvm use ruby-2.4.0
+    rvm gemset create skag_server_rails_app
+    rvm --ruby-version use 2.4.0@skag_server_rails_app
+    rvm gemset list
+    ```
 
 2. Download the application from [GitHub](https://github.com/googleads/google-api-ads-ruby).
-3. Unpack the contents and change to the application root:
 
-    $ tar xvzf adwords_on_rails-<version>.tar.gz && cd adwords_on_rails
+3. Clone the directory adwords_on_rails
 
-4. Install the bundle gem:
+4. Install dependencies
+    ```
+    sudo gem install rails
+    gem install bundle
+    bundle install -V
+    ```
 
-    $ gem install bundle
+5. Open PostgreSQL
 
-5. Install all required dependencies using bundle:
-
-    $ bundle install -V
-
-6.1 Open PostgreSQL
-
-6.2 Initialize local PostgreSQL schema:
-
-    $ rails db:create db:migrate RAILS_ENV="development"
+6. Initialize local PostgreSQL schema:
+    ```
+    rails db:create db:migrate RAILS_ENV="development"
+    ```
 
 7. Configure AdWords API settings:
+    * Guides:
+        * https://github.com/googleads/google-api-ads-ruby
+        * https://github.com/googleads/google-api-ads-ruby/wiki/API-access-using-own-credentials-(installed-application-flow)
+            * https://developers.google.com/adwords/api/docs/guides/authentication#installed
+    * Login and Create Project in Google API Manager https://console.developers.google.com
+    * Create Credentials
+        * OAuth Client ID
+            * Fill out the OAuth Consent Form
+            * Select "Other" Application Type
+            * Copy the OAuth Client ID and Secret that are shown
+            into .env
+            * Restrictions
+                * Authorized JavaScript origins
+                    * http://localhost:3000
+                * Authorized redirect URIs (callbacks)
+                    * http://localhost:3000/oauth2/callback
 
-    $ vi config/adwords_api.yml
+
+    ```
+    subl config/adwords_api.yml
+    ```
 
 8. Start the server:
-
-    $ rails server
+    ```
+    rails server
+    ```
 
 You should be able to access the application now by pointing your browser to:
-
-    http://localhost:3000
+    ```
+    open http://localhost:3000
+    ```
 
 
 Using the application
