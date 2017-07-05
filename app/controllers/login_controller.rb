@@ -2,7 +2,7 @@ require 'adwords_api'
 
 class LoginController < ApplicationController
 
-  skip_before_filter :authenticate
+  skip_before_action :authenticate
 
   GOOGLE_LOGOUT_URL = 'https://www.google.com/accounts/Logout'
 

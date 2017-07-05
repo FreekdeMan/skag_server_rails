@@ -26,6 +26,21 @@ developers and to demonstrate some of the core functionality in the API.
 How do I get started?
 ---------------------
 
+0. IntelliJ
+
+* IntelliJ IDE Config
+
+    * Fix error: "No Rails found in SDK" IntelliJ
+
+        * Edit Configurations > Click "+" > Select "Rails" > for "Ruby SDK" choose "Use other SDK" and select 'RVM: ruby-2.4.0 [skag_server_rails_app]'
+
+        * File > Project Structure > Project Settings > Project SDK > select 'RVM: ruby-2.4.0 [skag_server_rails_app]'
+
+        * File > Project Structure > Platform Settings > SDK > Select 'RVM: ruby-2.4.0 [skag_server_rails_app]' > Change "Gems bin directory" to the directory shown when you run `which rails` from the project directory (but remove `rails` from the end i.e. `/Users/Me/.rvm/gems/ruby-2.4.0@skag_server_rails_app/bin`)
+
+    * Fix error: Rails server launcher wasn't found in project
+        * Refer to my Stackoverflow post here: https://stackoverflow.com/questions/30141740/rubymine-rails-server-launcher-wasnt-found-in-the-project/44922746#44922746
+
 1. Check you have Ruby 2.2 or later installed:
 
     * Update RubyGems http://railsapps.github.io/updating-rails.html
@@ -37,10 +52,12 @@ How do I get started?
     * Create Gemset with RVM
     ```
     ruby -v
+    rvm list
     rvm use ruby-2.4.0
     rvm gemset create skag_server_rails_app
-    rvm --ruby-version use 2.4.0@skag_server_rails_app
+    rvm --ruby-version use 2.3.0@skag_server_rails_app2.3.0
     rvm gemset list
+    rvm gemdir
     ```
 
     * Fix Bin directory
@@ -54,7 +71,7 @@ How do I get started?
 
 4. Install dependencies
     ```
-    sudo gem install rails
+    gem install rails -v 5.0.2
     gem install bundle
     bundle install -V
     ```
@@ -75,14 +92,15 @@ How do I get started?
     * Create Credentials
         * OAuth Client ID
             * Fill out the OAuth Consent Form
-            * Select "Other" Application Type
+            * Select "Web Application" Application Type
+            (it may be necessary to also create "Other" Type first)
             * Copy the OAuth Client ID and Secret that are shown
             into .env
             * Restrictions
                 * Authorized JavaScript origins
                     * http://localhost:3000
                 * Authorized redirect URIs (callbacks)
-                    * http://localhost:3000/oauth2/callback
+                    * http://localhost:3000/login/callback
 
 
     ```
@@ -109,6 +127,8 @@ when not yet authorized.
 
 To grant access, click the 'Proceed' link. Make sure you are on the Google login
 page, log in with your AdWords account credentials and select 'Grant access'.
+
+* SKAG Server Rails wants to Manage your AdWords campaigns
 
 Note: Granting access to the application will only allow access to the AdWords
 data for the account. Other services will not be accessible.

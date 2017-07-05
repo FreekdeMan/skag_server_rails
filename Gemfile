@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'rails', '5.0.2'
 gem 'jquery-rails'
 gem 'activerecord-session_store'
