@@ -1,17 +1,17 @@
 AdWords on Rails
 ================
 
+## Screenshots
+
+![alt tag](https://raw.githubusercontent.com/ltfschoen/skag_server_rails/master/screenshots/index.png)
+
 Google's AdWords API service lets developers design computer programs that
 interact directly with the AdWords platform. With these applications,
 advertisers and third parties can more efficiently -- and creatively -- manage
 their large or complex AdWords accounts and campaigns.
 
-The AdWords on Rails sample application demonstrates how to access the AdWords
-API from within a Ruby on Rails environment. It is based on the [Google Ruby
+This program adapts the [AdWords on Rails sample application](https://github.com/googleads/google-api-ads-ruby) that demonstrated how to access the AdWords API from within a Ruby on Rails environment. It is based on the [Google Ruby
 AdWords API client library](https://github.com/googleads/google-api-ads-ruby).
-
-If you are new to Rails you can find more information on the
-[official site](http://rubyonrails.org/).
 
 The application demonstrates the following:
 
@@ -19,14 +19,7 @@ The application demonstrates the following:
  - Simple service request (CampaignService.get) and displaying the results.
  - Basic AdHoc reporting functionality with downloads support.
 
-We are sharing this code as open source to provide a starting point for new
-developers and to demonstrate some of the core functionality in the API.
-
-
-How do I get started?
----------------------
-
-0. IntelliJ
+## Setup
 
 * IntelliJ IDE Config
 
@@ -41,94 +34,84 @@ How do I get started?
     * Fix error: Rails server launcher wasn't found in project
         * Refer to my Stackoverflow post here: https://stackoverflow.com/questions/30141740/rubymine-rails-server-launcher-wasnt-found-in-the-project/44922746#44922746
 
-1. Check you have Ruby 2.2 or later installed:
+* Run Locally
+
+    * Check Ruby 2.2 or later installed:
 
     * Update RubyGems http://railsapps.github.io/updating-rails.html
-    ```
-    gem -v
-    gem update --system
-    ```
+        ```
+        gem -v
+        gem update --system
+        ```
 
     * Create Gemset with RVM
-    ```
-    ruby -v
-    rvm list
-    rvm use ruby-2.4.0
-    rvm gemset create skag_server_rails_app
-    rvm --ruby-version use 2.3.0@skag_server_rails_app2.3.0
-    rvm gemset list
-    rvm gemdir
-    ```
+        ```
+        ruby -v
+        rvm list
+        rvm use ruby-2.4.0
+        rvm gemset create skag_server_rails_app
+        rvm --ruby-version use 2.3.0@skag_server_rails_app2.3.0
+        rvm gemset list
+        rvm gemdir
+        ```
 
-    * Fix Bin directory
-    ```
-    rake rails:update:bin
-    ```
+    * Fix missing Bin directory
+        ```
+        rake rails:update:bin
+        ```
 
-2. Download the application from [GitHub](https://github.com/googleads/google-api-ads-ruby).
+    * Install dependencies
+        ```
+        gem install rails -v 5.0.2
+        gem install bundle
+        bundle install -V
+        ```
 
-3. Clone the directory adwords_on_rails
+    * Open PostgreSQL
 
-4. Install dependencies
-    ```
-    gem install rails -v 5.0.2
-    gem install bundle
-    bundle install -V
-    ```
+    * Initialize local PostgreSQL schema:
+        ```
+        rails db:create db:migrate RAILS_ENV="development"
+        ```
 
-5. Open PostgreSQL
-
-6. Initialize local PostgreSQL schema:
-    ```
-    rails db:create db:migrate RAILS_ENV="development"
-    ```
-
-7. Configure AdWords API settings:
-    * Guides:
-        * https://github.com/googleads/google-api-ads-ruby
-        * https://github.com/googleads/google-api-ads-ruby/wiki/API-access-using-own-credentials-(installed-application-flow)
-            * https://developers.google.com/adwords/api/docs/guides/authentication#installed
-    * Login and Create Project in Google API Manager https://console.developers.google.com
-    * Create Credentials
-        * OAuth Client ID
-            * Fill out the OAuth Consent Form
-            * Select "Web Application" Application Type
-            (it may be necessary to also create "Other" Type first)
-            * Copy the OAuth Client ID and Secret that are shown
-            into .env
-            * Restrictions
-                * Authorized JavaScript origins
-                    * http://localhost:3000
-                * Authorized redirect URIs (callbacks)
-                    * http://localhost:3000/login/callback
+    * Configure AdWords API settings:
+        * Guides:
+            * https://github.com/googleads/google-api-ads-ruby
+            * https://github.com/googleads/google-api-ads-ruby/wiki/API-access-using-own-credentials-(installed-application-flow)
+                * https://developers.google.com/adwords/api/docs/guides/authentication#installed
+        * Login and Create Project in Google API Manager https://console.developers.google.com
+        * Create Credentials
+            * OAuth Client ID
+                * Fill out the OAuth Consent Form
+                * Select "Web Application" Application Type
+                (it may be necessary to also create "Other" Type first)
+                * Copy the OAuth Client ID and Secret that are shown
+                into .env
+                * Restrictions
+                    * Authorized JavaScript origins
+                        * http://localhost:3000
+                    * Authorized redirect URIs (callbacks)
+                        * http://localhost:3000/login/callback
 
 
-    ```
-    subl config/adwords_api.yml
-    ```
+        ```
+        subl config/adwords_api.yml
+        ```
 
-8. Start the server:
-    ```
-    rails server
-    ```
+    * Start the server. Open in browser:
+        ```
+        rails server;
+        open http://localhost:3000
+        ```
 
-You should be able to access the application now by pointing your browser to:
-    ```
-    open http://localhost:3000
-    ```
+## Usage
 
-
-Using the application
----------------------
-
-In order to access AdWords data the application needs to be granted access by a
-logged in user. You will be automatically redirected to a page with login prompt
+To access AdWords data the app needs to be granted access by a
+logged in user. The user is automatically redirected to a page with login prompt
 when not yet authorized.
 
-To grant access, click the 'Proceed' link. Make sure you are on the Google login
+After being prompted with say `SKAG Server Rails wants to Manage your AdWords campaigns`, to grant access, click the 'Proceed' link. Ensure you are on the Google login
 page, log in with your AdWords account credentials and select 'Grant access'.
-
-* SKAG Server Rails wants to Manage your AdWords campaigns
 
 Note: Granting access to the application will only allow access to the AdWords
 data for the account. Other services will not be accessible.
@@ -137,8 +120,7 @@ Once logged in you can retrieve the accounts list, select an account and browse
 the campaigns list or download a report with the corresponding menu items.
 
 
-Configuring the Ruby AdWords API library
-----------------------------------------
+## Configuring the Ruby AdWords API library
 
 To be able to use the AdWords API there are a few parameters that need to be
 specified. The configuration file is located under the 'config' directory and
@@ -148,34 +130,16 @@ For details regarding configuration directive please refer to the [library
 README](https://github.com/googleads/google-api-ads-ruby/blob/master/adwords_api/README.md).
 
 
-Production accounts
--------------------
+## Production accounts
 
 This demo is capable of accessing production accounts. Although the app doesn't
-perform any mutate opertions, it's best to be careful especially if modifying it
-to include additional functionality.
+perform any mutate operations, it is best to be careful especially if modifying it to include additional functionality.
 
 
-Where do I submit bug reports and feature requests?
----------------------------------------------------
+## Links
 
-Bug reports and feature requests can be submitted at:
-
-    https://github.com/googleads/google-api-ads-ruby/issues
-
-Also please feel free to ask questions and discuss the application on forums:
-
-    https://groups.google.com/forum/#!forum/adwords-api
-
-Make sure to subscribe to our Google Plus page for API change announcements and
-other news:
-
-    https://plus.google.com/+GoogleAdsDevelopers
-
-Contacts:
----------
-
-Authors:
-
-    Danial Klimkin
-    Michael Cloonan
+* Bug reports - https://github.com/googleads/google-api-ads-ruby/issues
+* Forums - https://groups.google.com/forum/#!forum/adwords-api
+* Google Plus page for API change announcements and
+other news - https://plus.google.com/+GoogleAdsDevelopers
+* Original Authors - Danial Klimkin, Michael Cloonan
