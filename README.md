@@ -19,6 +19,52 @@ The application demonstrates the following:
  - Simple service request (CampaignService.get) and displaying the results.
  - Basic AdHoc reporting functionality with downloads support.
 
+## AdWords
+
+
+* AdWords
+	* Setup Developer Account Links
+		* https://developers.google.com/adwords/api/docs/guides/reset-devtoken
+		* https://support.google.com/adwords/answer/6139186
+		* https://adwords.google.com/home/tools/manager-accounts/
+		* https://developers.google.com/adwords/api/docs/guides/signup
+		* https://groups.google.com/forum/#!topic/adwords-api/ZmNKYoLjpYc
+		* https://groups.google.com/forum/#!topic/adwords-api/rdDyOLlH3Ls
+		* https://developers.google.com/adwords/api/docs/reference/v201702/CustomerService
+	* Login
+		* https://adwords.google.com/um/Welcome/Home
+		* Click Gear Icon
+			* Account Settings
+				* AdWords API Center
+					* Create Token for Independent AdWords Developer with "Test Accounts" Access Level
+	* Create and New Test AdWords Account (i.e. ltfschoentest100) (must be separate from Production MMC Account used for API Tokens)
+		* IMPORTANT https://developers.google.com/adwords/api/docs/guides/accounts-overview#test_accounts
+		* https://medium.com/@MihaZelnik/how-to-create-test-account-for-adwords-api-503ca72b25a4
+
+        * Create New Google Account for Test Account https://accounts.google.com/SignUp?hl=en
+        * Create AdWords Test Account https://adwords.google.com/um/Welcome/?sf=mt
+            * Select "To manage other people's accounts" (NOT "To manage my accounts")
+            * Click Gear Icon
+                * Account Settings
+                    * Account Access
+                        * Invite your Production MMC Account
+
+            * Click ACCOUNT > New AdWords account (i.e. ltfschoen200)
+        * Create Campaign within ltfschoen100 (Test Account) under ltfschoen200
+
+        * NOT IMPORTANT
+            * Created Account ltfschoen101 "To manage my accounts"
+            * Configure Test Account
+                * ACCOUNT > Link existing accounts > Enter customer IDs (i.e. the Production MCC ID)
+            * Go to "Manually set account ID" within the app at localhost:3000
+                * Enter Account clientCustomerID (CID) of Test Account (i.e. 000-000-0000) shown at https://adwords.google.com/cm/CampaignMgmt
+            * Click List Campaigns on Home page
+	* API Methods
+		* get_customers
+			* http://googleadsdeveloper.blogspot.com.au/2016/10/access-multiple-adwords-accounts-with.html
+	* Support
+		* 1800 988 571 for free advice on customizing your account
+
 ## Setup
 
 * IntelliJ IDE Config
