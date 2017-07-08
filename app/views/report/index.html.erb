@@ -21,7 +21,9 @@
         </select>
       </div>
       <div class="report-form-item">
-      Fields: <input name="fields" value="ExternalCustomerId, AccountDescriptiveName" size="80">
+        <div>Fields: <input name="fields" value="ExternalCustomerId, AccountDescriptiveName" size="80"></div>
+        <div style="font-size: 0.7em; color: #AAAAAA; margin-top: 0.5em;">Example Fields: CampaignId, AdGroupId, Id, Criteria,
+          CriteriaType, FinalUrls, Impressions, Clicks, Cost</div>
       </div>
       <div class="report-form-item">
         Format: <select name="format">
@@ -31,8 +33,14 @@
         </select>
       </div>
       <div class="report-form-item">
-      <input type="checkbox" name="zeroes" value="true">
-      Include zero impressions
+        <input type="checkbox" name="zeroes" value="true">
+        Include zero impressions<br/>
+        <input type="checkbox" name="report_header" value="true">
+        Include report header<br/>
+        <input type="checkbox" name="column_header" value="true">
+        Include column header<br/>
+        <input type="checkbox" name="report_summary" value="true">
+        Include report summary<br/>
       </div>
       <div class="report-form-item">
       <input type="submit" value="Get report">

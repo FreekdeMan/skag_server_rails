@@ -1,13 +1,19 @@
-# See this document for reference:
-#   https://developers.google.com/adwords/api/docs/appendix/reports
+# References:
+# - https://developers.google.com/adwords/api/docs/appendix/reports
+# - https://developers.google.com/adwords/api/docs/guides/reporting
 
 class ReportController < ApplicationController
 
+  # Define report definition. Alternatively pass XML text as string
+  # Reference:
+  # - https://developers.google.com/adwords/api/docs/guides/reporting#create_a_report_definition
   REPORT_DEFINITION_TEMPLATE = {
     :selector => {
-      :fields => []
+      :fields => [],
+      # Optional predicates
+      # Reference: https://github.com/googleads/google-api-ads-ruby/tree/master/adwords_api/examples/v201705/basic_operations
     },
-    :report_name => 'AdWords on Rails report',
+    :report_name => 'Last 7 days AdWords on Rails report',
     :report_type => nil,
     :download_format => nil,
     :date_range_type => 'LAST_7_DAYS'
@@ -25,18 +31,31 @@ class ReportController < ApplicationController
 
     validate_data(params)
 
+    # AdWords API instance build from config: adwords_api.yml.erb
     api = get_adwords_api()
     report_utils = api.report_utils()
     definition = Report.create_definition(REPORT_DEFINITION_TEMPLATE, params)
+
+    # Optional: Set configuration of API instance to suppress header,
+    # column name, or summary rows in report output. Alternatively configure
+    # in adwords_api.yml.erb configuration file.
+    api.skip_report_header = true if 'true'.eql?(params[:report_header])
+    api.skip_column_header = true if 'true'.eql?(params[:column_header])
+    api.skip_report_summary = true if 'true'.eql?(params[:report_summary])
+    # Enable to allow rows with zero impressions to show.
     api.include_zero_impressions = true if 'true'.eql?(params[:zeroes])
     begin
-      # Here we only expect reports that fit into memory. For large reports
-      # you may want to save them to files and serve separately.
+      # Only expect reports that fit into memory. Large reports
+      # should be saved to files and served separately.
+      # Note:
+      # - Retrieve report as return value with `download_report`
+      # - Download report using utility method `download_report_as_file`
       report_data = report_utils.download_report(definition)
       format = ReportFormat.report_format_for_type(params[:format])
       content_type = format.content_type
       filename = format.file_name(params[:type])
       send_data(report_data, {:filename => filename, :type => content_type})
+      puts "Report was downloaded to '%s'." % filename
     rescue AdwordsApi::Errors::ReportError => e
       @error = e.message
     end

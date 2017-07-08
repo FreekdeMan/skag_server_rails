@@ -2,6 +2,8 @@ require 'adwords_api'
 
 class ApplicationController < ActionController::Base
 
+  API_VERSION = :v201705
+
   before_action :authenticate
   protect_from_forgery
 
@@ -9,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   # Returns the API version in use.
   def get_api_version()
-    return :v201705
+    return API_VERSION
   end
 
   # Returns currently selected account.
