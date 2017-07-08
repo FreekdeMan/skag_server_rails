@@ -80,11 +80,11 @@ The application demonstrates the following:
 
     * Fix error: "No Rails found in SDK" IntelliJ
 
-        * Edit Configurations > Click "+" > Select "Rails" > for "Ruby SDK" choose "Use other SDK" and select 'RVM: ruby-2.4.0 [skag_server_rails_app]'
+        * Edit Configurations > Click "+" > Select "Rails" > for "Ruby SDK" choose "Use other SDK" and select 'RVM: ruby-2.4.1 [skag_server_rails_app]'
 
-        * File > Project Structure > Project Settings > Project SDK > select 'RVM: ruby-2.4.0 [skag_server_rails_app]'
+        * File > Project Structure > Project Settings > Project SDK > select 'RVM: ruby-2.4.1 [skag_server_rails_app]'
 
-        * File > Project Structure > Platform Settings > SDK > Select 'RVM: ruby-2.4.0 [skag_server_rails_app]' > Change "Gems bin directory" to the directory shown when you run `which rails` from the project directory (but remove `rails` from the end i.e. `/Users/Me/.rvm/gems/ruby-2.4.0@skag_server_rails_app/bin`)
+        * File > Project Structure > Platform Settings > SDK > Select 'RVM: ruby-2.4.1 [skag_server_rails_app]' > Change "Gems bin directory" to the directory shown when you run `which rails` from the project directory (but remove `rails` from the end i.e. `/Users/Me/.rvm/gems/ruby-2.4.1@skag_server_rails_app/bin`)
 
     * Fix error: Rails server launcher wasn't found in project
         * Refer to my Stackoverflow post here: https://stackoverflow.com/questions/30141740/rubymine-rails-server-launcher-wasnt-found-in-the-project/44922746#44922746
@@ -103,9 +103,9 @@ The application demonstrates the following:
         ```
         ruby -v
         rvm list
-        rvm use ruby-2.4.0
-        rvm gemset create skag_server_rails_app
-        rvm --ruby-version use 2.3.0@skag_server_rails_app2.3.0
+        rvm use ruby-2.4.1
+        rvm gemset create skag_server_rails_app2.4.1
+        rvm --ruby-version use 2.4.1@skag_server_rails_app2.4.1
         rvm gemset list
         rvm gemdir
         ```
@@ -117,7 +117,7 @@ The application demonstrates the following:
 
     * Install dependencies
         ```
-        gem install rails -v 5.0.2
+        gem install rails -v 5.1.2
         gem install bundle
         bundle install -V
         ```
