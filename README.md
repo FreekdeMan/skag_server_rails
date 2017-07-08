@@ -51,6 +51,13 @@ The application demonstrates the following:
         * Click "List Campaigns"
 
 * AdWords Other
+    * Reports & Measure Reports - https://developers.google.com/adwords/api/docs/guides/uireports
+        * Campaign Negative Keywords Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#campaign-negative-keywords
+        * Ad Groups Report - https://developers.google.com/adwords/api/docs/appendix/reports#ad-group
+        * **Ad Performance Report** - https://developers.google.com/adwords/api/docs/appendix/reports#ad
+        * Keywords Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#keywords
+        * Display Keyword Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#display-keyword
+        * Search Query Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#search-query
 	* Setup Developer Account Links
 		* https://developers.google.com/adwords/api/docs/guides/reset-devtoken
 		* https://support.google.com/adwords/answer/6139186
