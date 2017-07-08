@@ -22,7 +22,35 @@ The application demonstrates the following:
 ## AdWords
 
 
-* AdWords
+* AdWords Setup
+    * Initial Setup of AdWords Product, Test, and Google Accounts
+        * Create New Production Google Account (i.e. ltfschoen)
+            * Create New Google Account for Production https://accounts.google.com/SignUp?hl=en
+            * Create AdWards Production MMC Account https://adwords.google.com/um/Welcome/Home
+            * Click Gear Icon
+                * Account Settings
+                    * AdWords API Center
+                        * Create Token for Independent AdWords Developer with "Test Accounts" Access Level
+            * Note: Use API Tokens from Production MMC Account in app
+        * Create New Test AdWords Account (i.e. ltfschoentest100)
+            * Create New Google Account for Test Account
+            * Create AdWords Test Account https://adwords.google.com/um/Welcome/?sf=mt
+                * Select "To manage other people's accounts" (NOT "To manage my accounts")
+                * Click Gear Icon
+                    * Account Settings
+                        * Account Access
+                            * Invite your Production MMC Account
+                * Create Client Account within Adwords Test Account
+                    * Click ACCOUNT > New AdWords account (i.e. ltfschoen200)
+                * Create Campaign within ltfschoen100 (Test Account) under ltfschoen200 (Client Account)
+    * Workflow within Rails app
+        * Click "Proceed"
+        * Login with Google Account of AdWords Test Account (i.e. ltfschoen100)
+        * Click "List Accounts"
+            * Select Account: ltfschoen200 (since used to create Campaign)
+        * Click "List Campaigns"
+
+* AdWords Other
 	* Setup Developer Account Links
 		* https://developers.google.com/adwords/api/docs/guides/reset-devtoken
 		* https://support.google.com/adwords/answer/6139186
@@ -31,28 +59,9 @@ The application demonstrates the following:
 		* https://groups.google.com/forum/#!topic/adwords-api/ZmNKYoLjpYc
 		* https://groups.google.com/forum/#!topic/adwords-api/rdDyOLlH3Ls
 		* https://developers.google.com/adwords/api/docs/reference/v201702/CustomerService
-	* Login
-		* https://adwords.google.com/um/Welcome/Home
-		* Click Gear Icon
-			* Account Settings
-				* AdWords API Center
-					* Create Token for Independent AdWords Developer with "Test Accounts" Access Level
-	* Create and New Test AdWords Account (i.e. ltfschoentest100) (must be separate from Production MMC Account used for API Tokens)
-		* IMPORTANT https://developers.google.com/adwords/api/docs/guides/accounts-overview#test_accounts
-		* https://medium.com/@MihaZelnik/how-to-create-test-account-for-adwords-api-503ca72b25a4
-
-        * Create New Google Account for Test Account https://accounts.google.com/SignUp?hl=en
-        * Create AdWords Test Account https://adwords.google.com/um/Welcome/?sf=mt
-            * Select "To manage other people's accounts" (NOT "To manage my accounts")
-            * Click Gear Icon
-                * Account Settings
-                    * Account Access
-                        * Invite your Production MMC Account
-
-            * Click ACCOUNT > New AdWords account (i.e. ltfschoen200)
-        * Create Campaign within ltfschoen100 (Test Account) under ltfschoen200
-
-        * NOT IMPORTANT
+		* https://developers.google.com/adwords/api/docs/guides/accounts-overview#test_accounts
+        * https://medium.com/@MihaZelnik/how-to-create-test-account-for-adwords-api-503ca72b25a4
+        * IGNORE
             * Created Account ltfschoen101 "To manage my accounts"
             * Configure Test Account
                 * ACCOUNT > Link existing accounts > Enter customer IDs (i.e. the Production MCC ID)
