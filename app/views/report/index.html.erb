@@ -18,14 +18,18 @@
       <div class="report-form-item">
         Report: <select name="type">
         <% @reports.each_pair do |key, report| %>
-          <option value="<%= key %>"><%= report.name %>
+          <% if report.name == "Search Query Performance" %>
+            <option value="<%= key %>" selected="selected"><%= report.name %>
+          <% else %>
+            <option value="<%= key %>"><%= report.name %>
+          <% end %>
         <% end %>
         </select>
       </div>
       <div class="report-form-item">
-        <div>Fields: <input name="fields" value="ExternalCustomerId, AccountDescriptiveName" size="80"></div>
-        <div style="font-size: 0.7em; color: #AAAAAA; margin-top: 0.5em;">Example Fields: CampaignId, AdGroupId, Id, Criteria,
-          CriteriaType, FinalUrls, Impressions, Clicks, Cost</div>
+        <div>Fields: <input name="fields" value="CampaignId, CampaignStatus, AdGroupId, AdGroupStatus, Ctr, Impressions, Clicks, Cost, AverageCpc" size="80"></div>
+        <div style="font-size: 0.7em; color: #AAAAAA; margin-top: 0.5em;">Example Fields: CampaignId, CampaignStatus, AdGroupId, AdGroupStatus, Ctr, Impressions, Clicks, Cost, AverageCpc</div>
+        <div style="font-size: 0.7em; color: #AAAAAA; margin-top: 0.5em;">Other: Id, Criteria, CriteriaType, FinalUrls</div>
       </div>
       <div class="report-form-item">
         Format: <select name="format">

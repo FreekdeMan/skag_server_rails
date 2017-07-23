@@ -58,12 +58,17 @@ The application demonstrates the following:
         * Ad Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#ad
         * Keywords Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#keywords
         * Display Keyword Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#display-keyword
-        * **Search Query Performance Report** - https://developers.google.com/adwords/api/docs/appendix/reports#search-query
+        * **Search Query Performance Report**
+            * https://developers.google.com/adwords/api/docs/appendix/reports#search-query
+            * https://developers.google.com/adwords/api/docs/appendix/reports/search-query-performance-report
             * See what people searching and if matches keywords
             * All Campaigns > Query > Search Terms (requires live ads)
             * Fields:
                 * CampaignId, AdGroupStatus, Ctr, Impressions, Clicks, AverageCpc
             * Notes
+                * Example Ruby Code Snippets for AdWords API https://developers.google.com/adwords/api/docs/samples/ruby/reporting
+                * Add Add Group
+                    * https://github.com/googleads/google-api-ads-ruby/blob/master/adwords_api/examples/v201702/basic_operations/add_ad_groups.rb
                 * Search Query Performance Report
                     * Goal:
                         * Increase:
@@ -86,6 +91,12 @@ The application demonstrates the following:
                         * Remove Search Terms with low performance (conversion rate)
                 * **IN PROGRESS**
                 * Reference: https://reportgarden.com/2016/08/02/adwords-search-terms-reports/
+            * SciRuby
+                * Daru
+                    * https://github.com/SciRuby/daru
+                    * https://github.com/domitry/nyaplot
+                    * http://v0dro.github.io/blog/2014/11/25/data-analysis-in-ruby-basic-data-manipulation-and-plotting/
+                    * http://nbviewer.jupyter.org/github/SciRuby/sciruby-notebooks/tree/master/
             * Links
                 * https://developers.google.com/adwords/api/docs/guides/reporting
                 * Export Report https://reportgarden.com/2016/08/02/adwords-search-terms-reports/

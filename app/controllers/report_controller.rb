@@ -57,8 +57,43 @@ class ReportController < ApplicationController
       filename = format.file_name(params[:type])
       Rails.logger.info("# ReportController with report_data: #{report_data.to_yaml}")
       Rails.logger.info("# ReportController with filename: #{filename.to_yaml}")
-      send_data(report_data, {:filename => filename, :type => content_type})
-      puts "Report was downloaded to '%s'." % filename
+
+      # Daru DataFrame
+      # - https://github.com/SciRuby/daru/blob/master/lib/daru/dataframe.rb
+      require 'daru'
+      require 'fastcsv'
+      all = []
+      FastCSV.raw_parse(report_data) { |row| all.push row }
+      df = Daru::DataFrame.rows all[1..-1], order: all[1], index:(0..(all.length-2)).to_a
+      # df = Daru::DataFrame.new([], order: (1..4).to_a, index:(0..10).to_a)
+      Rails.logger.info("# Report Daru DataFrame: #{df}")
+
+      df.row[1..(all.length-1)]
+      df[1].type
+
+      # name = df[5]
+      # age  = df[6]
+      #
+      # df.plot type: :bar, x: name, y: age do |plot, diagram|
+      #   plot.x_label "Name"
+      #   plot.y_label "Age"
+      #   plot.yrange [20,80]
+      # end
+
+      # require 'iruby'
+      # require 'nyaplot'
+      # plot = Nyaplot::Plot.new
+      # sc = plot.add(:scatter, [0,1,2,3,4], [-1,2,-3,4,-5])
+      # color = Nyaplot::Colors.qual
+      # sc.color(color)
+
+      # require 'iruby/rails'
+      # IRuby.load_rails
+      # # plot.show # show plot on IRuby notebook
+      # plot.export_html # export plot to the current directory as a html file
+
+      # send_data(report_data, {:filename => filename, :type => content_type})
+      # puts "Report was downloaded to '%s'." % filename
     rescue AdwordsApi::Errors::ReportError => e
       @error = e.message
     end
