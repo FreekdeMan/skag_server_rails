@@ -9,6 +9,7 @@ class CampaignController < ApplicationController
       response = request_campaigns_list()
       if response
         @campaigns = Campaign.get_campaigns_list(response)
+        Rails.logger.info("# CampaignController with @campaigns: #{@campaigns}")
         @campaign_count = response[:total_num_entries]
       end
     end

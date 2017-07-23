@@ -35,15 +35,16 @@ class ReportController < ApplicationController
     api = get_adwords_api()
     report_utils = api.report_utils()
     definition = Report.create_definition(REPORT_DEFINITION_TEMPLATE, params)
-
+    Rails.logger.info("# ReportController with params: #{params.to_yaml}")
     # Optional: Set configuration of API instance to suppress header,
     # column name, or summary rows in report output. Alternatively configure
     # in adwords_api.yml.erb configuration file.
-    api.skip_report_header = true if 'true'.eql?(params[:report_header])
-    api.skip_column_header = true if 'true'.eql?(params[:column_header])
-    api.skip_report_summary = true if 'true'.eql?(params[:report_summary])
-    # Enable to allow rows with zero impressions to show.
-    api.include_zero_impressions = true if 'true'.eql?(params[:zeroes])
+    api.skip_report_header = 'on'.eql?(params[:report_header]) ? true : false
+    api.skip_column_header = 'on'.eql?(params[:column_header]) ? true : false
+    api.skip_report_summary = 'on'.eql?(params[:report_summary]) ? true : false
+    # # Enable to allow rows with zero impressions to show.
+    # api.include_zero_impressions = 'on'.eql?(params[:zeroes]) ? true : false
+    api.use_raw_enum_values = 'on'.eql?(params[:raw_enum_values]) ? true : false
     begin
       # Only expect reports that fit into memory. Large reports
       # should be saved to files and served separately.
@@ -54,11 +55,19 @@ class ReportController < ApplicationController
       format = ReportFormat.report_format_for_type(params[:format])
       content_type = format.content_type
       filename = format.file_name(params[:type])
+      Rails.logger.info("# ReportController with report_data: #{report_data.to_yaml}")
+      Rails.logger.info("# ReportController with filename: #{filename.to_yaml}")
       send_data(report_data, {:filename => filename, :type => content_type})
       puts "Report was downloaded to '%s'." % filename
     rescue AdwordsApi::Errors::ReportError => e
       @error = e.message
     end
+  end
+
+  def sqr_example
+    sample_xml = File.open("search_query_report_example.xml") { |f| Nokogiri::XML(f) }
+    Rails.logger.info("# ReportController with sample_xml: #{sample_xml.to_yaml}")
+    @sample_xml = sample_xml
   end
 
   private

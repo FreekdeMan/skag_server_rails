@@ -13,6 +13,7 @@ AdwordsOnRails::Application.routes.draw do
 
   get "report/index"
   post "report/get"
+  get "report/sqr_example" => "report#sqr_example", :as => :sqr_example
 
   root :to => "home#index"
 end

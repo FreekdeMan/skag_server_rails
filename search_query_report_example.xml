@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<report>
+    <report-name name='Keyword report'/>
+    <date-range date='Jul 5, 2017-Jul 11, 2017'/>
+    <table>
+        <columns>
+            <column name='keywordState' display='Keyword state'/>
+            <column name='keyword' display='Keyword'/>
+            <column name='campaign' display='Campaign'/>
+            <column name='adGroup' display='Ad group'/>
+            <column name='status' display='Status'/>
+            <column name='maxCPC' display='Max. CPC'/>
+            <column name='impressions' display='Impressions'/>
+            <column name='interactions' display='Interactions'/>
+            <column name='interactionTypes' display='Interaction Types'/>
+            <column name='interactionRate' display='Interaction Rate'/>
+            <column name='avgCost' display='Avg. Cost'/>
+            <column name='cost' display='Cost'/>
+        </columns>
+
+        <!--
+            CAMPAIGN - BRANDING
+            ADGROUP - ARTIFICIAL INTELLIGENCE BRANDS
+        -->
+        <row keywordState='enabled'
+             keyword='+branding +and +artificial +intelligence +firms'
+             campaign='Branding'
+             adGroup='Artificial Intelligence Brands'
+             status='campaign paused'
+             maxCPC='4.00' impressions='0' interactions='0'
+             interactionTypes='--' interactionRate='0.00%' avgCost='0.00' cost='0.00'/>
+        <row keywordState='enabled'
+             keyword='brand ai'
+             campaign='Branding'
+             adGroup='Artificial Intelligence Brands'
+             status='campaign paused'
+             maxCPC='2.00' impressions='0' interactions='0' interactionTypes='--'
+             interactionRate='0.00%' avgCost='0.00' cost='0.00'/>
+
+        <!--
+            CAMPAIGN - BRANDING
+            ADGROUP - BRAND IDENTITY
+        -->
+        <row keywordState='enabled'
+             keyword='+visual +brand +identity'
+             campaign='Branding'
+             adGroup='Brand Identity'
+             status='campaign paused'
+             maxCPC='4.00' impressions='0' interactions='0' interactionTypes='--'
+             interactionRate='0.00%' avgCost='0.00' cost='0.00'/>
+        <row keywordState='enabled'
+             keyword='+creating +a +brand +identity'
+             campaign='Branding'
+             adGroup='Brand Identity'
+             status='campaign paused'
+             maxCPC='2.75' impressions='0' interactions='0' interactionTypes='--'
+             interactionRate='0.00%' avgCost='0.00' cost='0.00'/>
+
+        <!--
+            CAMPAIGN - CREATIVE ARTIFICIAL INTELLIGENCE
+            ADGROUP - AGENCY SYDNEY
+        -->
+        <row keywordState='paused'
+             keyword='&quot;advertising sydney&quot;'
+             campaign='Creative Artificial Intelligence'
+             adGroup='Agency Sydney'
+             status='campaign paused'
+             maxCPC='auto: 2.75' impressions='0' interactions='0'
+             interactionTypes='--' interactionRate='0.00%' avgCost='0.00' cost='0.00'/>
+    </table>
+</report>

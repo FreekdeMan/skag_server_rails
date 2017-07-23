@@ -6,7 +6,9 @@
 <% else %>
   See <a href="https://developers.google.com/adwords/api/docs/appendix/reports">
   reporting documentation</a> for reports and fields reference. The report will
-  be ran for the last 7 days.<br>
+  be ran for the last 7 days.<br><br>
+
+  <%= link_to("Show Search Query Report Example", sqr_example_path) %>
 
   <% if @reports.empty? %>
     <ul><li>No reports available.</ul>
@@ -33,14 +35,16 @@
         </select>
       </div>
       <div class="report-form-item">
-        <input type="checkbox" name="zeroes" value="true">
-        Include zero impressions<br/>
-        <input type="checkbox" name="report_header" value="true">
-        Include report header<br/>
-        <input type="checkbox" name="column_header" value="true">
-        Include column header<br/>
-        <input type="checkbox" name="report_summary" value="true">
-        Include report summary<br/>
+        <!--<input type="checkbox" name="zeroes" value="true">-->
+        <!--Include zero impressions<br/>-->
+        <input type="checkbox" name="raw_enum_values" checked>
+        Include raw enum values<br/>
+        <input type="checkbox" name="report_header">
+        Skip report header<br/>
+        <input type="checkbox" name="column_header">
+        Skip column header<br/>
+        <input type="checkbox" name="report_summary">
+        Skip report summary<br/>
       </div>
       <div class="report-form-item">
       <input type="submit" value="Get report">

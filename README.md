@@ -27,7 +27,7 @@ The application demonstrates the following:
         * Create New Production Google Account (i.e. ltfschoen)
             * Create New Google Account for Production https://accounts.google.com/SignUp?hl=en
             * Create AdWards Production MMC Account https://adwords.google.com/um/Welcome/Home
-            * Click Gear Icon
+            * Click Gear Icon (Manager account)
                 * Account Settings
                     * AdWords API Center
                         * Create Token for Independent AdWords Developer with "Test Accounts" Access Level
@@ -47,6 +47,7 @@ The application demonstrates the following:
         * Click "Proceed"
         * Login with Google Account of AdWords Test Account (i.e. ltfschoen100)
         * Click "List Accounts"
+            * Note: To view hierarchy of accounts from a different Production MMC Account then use their developer token instead and have that production account send an access invitation to ltfschoen100.
             * Select Account: ltfschoen200 (since used to create Campaign)
         * Click "List Campaigns"
 
@@ -54,10 +55,42 @@ The application demonstrates the following:
     * Reports & Measure Reports - https://developers.google.com/adwords/api/docs/guides/uireports
         * Campaign Negative Keywords Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#campaign-negative-keywords
         * Ad Groups Report - https://developers.google.com/adwords/api/docs/appendix/reports#ad-group
-        * **Ad Performance Report** - https://developers.google.com/adwords/api/docs/appendix/reports#ad
+        * Ad Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#ad
         * Keywords Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#keywords
         * Display Keyword Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#display-keyword
-        * Search Query Performance Report - https://developers.google.com/adwords/api/docs/appendix/reports#search-query
+        * **Search Query Performance Report** - https://developers.google.com/adwords/api/docs/appendix/reports#search-query
+            * See what people searching and if matches keywords
+            * All Campaigns > Query > Search Terms (requires live ads)
+            * Fields:
+                * CampaignId, AdGroupStatus, Ctr, Impressions, Clicks, AverageCpc
+            * Notes
+                * Search Query Performance Report
+                    * Goal:
+                        * Increase:
+                            * Ctr (click through rates)
+                        * Decrease:
+                            * Cpc (cost per click)
+                            * CPA (cost per acquisition)
+                        * Maintain:
+                            * Impressions
+                            * Clicks
+                            * Conversions
+                    * Problems
+                        * Situation - Broad Match Search Terms - ads show for broad search phrases very different
+                        from keyword bidding on.
+                            * i.e. broad match search term results in ad served on related terms with synonymns that increase Ad Impressions but not good if not selling regular shoes but instead selling specialised goods (i.e. sports shoes)
+                                * Bid Broad Match - "women’s sports shoes"
+                                * Ad Served - "ladies sports shoes", "shoes for women"
+                        * Issue - Quality Score lowers, Cpc increases, Conversion rate lowers, CPA increases
+                    * Strategies
+                        * Remove Search Terms with low performance (conversion rate)
+                * **IN PROGRESS**
+                * Reference: https://reportgarden.com/2016/08/02/adwords-search-terms-reports/
+            * Links
+                * https://developers.google.com/adwords/api/docs/guides/reporting
+                * Export Report https://reportgarden.com/2016/08/02/adwords-search-terms-reports/
+                * https://groups.google.com/forum/#!topic/adwords-api/6_se0m7g1v8
+
 	* Setup Developer Account Links
 		* https://developers.google.com/adwords/api/docs/guides/reset-devtoken
 		* https://support.google.com/adwords/answer/6139186
