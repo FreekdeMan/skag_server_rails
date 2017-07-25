@@ -92,8 +92,16 @@ class ReportController < ApplicationController
       # # plot.show # show plot on IRuby notebook
       # plot.export_html # export plot to the current directory as a html file
 
-      # send_data(report_data, {:filename => filename, :type => content_type})
-      # puts "Report was downloaded to '%s'." % filename
+      # send_data(report_data, {
+      require 'prawn'
+      send_data(generate_pdf(report_data), {
+          # :filename => filename,
+          :filename => "#{filename}.pdf",
+          # :type => content_type,
+          type: "application/pdf",
+          :disposition => 'inline'
+      })
+      puts "Report was downloaded to '%s'." % filename
     rescue AdwordsApi::Errors::ReportError => e
       @error = e.message
     end
@@ -112,5 +120,12 @@ class ReportController < ApplicationController
     raise StandardError, 'Unknown format' if format.nil?
     report = Report.report_for_type(data[:type])
     raise StandardError, 'Unknown report type' if report.nil?
+  end
+
+  # Reference Action Controller Documentation
+  def generate_pdf(report_data)
+    Prawn::Document.new do
+      text report_data
+    end.render
   end
 end

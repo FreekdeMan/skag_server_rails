@@ -19,6 +19,9 @@ gem 'iruby'
 # gem 'zmq' # zermq
 gem 'iruby-rails', group: :development
 
+# PDF
+gem 'prawn'
+
 # AdWords API gem.
 gem 'google-adwords-api', '~> 0.25.0'
 

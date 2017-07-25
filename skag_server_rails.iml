@@ -35,15 +35,20 @@
     <orderEntry type="library" scope="PROVIDED" name="akami (v1.3.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v8.0.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="backports (v3.8.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bond (v0.5.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.3, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.15.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.0.5, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="daru (v0.1.5, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="data_uri (v0.1.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="dotenv (v2.2.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="dotenv-rails (v2.2.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.6.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faraday (v0.12.2, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fastcsv (v0.0.6, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.18, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi-rzmq (v2.0.5, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi-rzmq-core (v1.0.6, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.4.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="google-ads-common (v0.14.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="google-ads-savon (v1.0.2, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
@@ -51,6 +56,7 @@
     <orderEntry type="library" scope="PROVIDED" name="gyoku (v1.3.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="httpclient (v2.8.3, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="httpi (v2.4.2, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="i18n (v0.8.6, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="iruby (v0.2.9, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="iruby-rails (v1.0.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.3.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
@@ -60,7 +66,9 @@
     <orderEntry type="library" scope="PROVIDED" name="method_source (v0.8.2, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v3.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2016.0521, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mimemagic (v0.3.2, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_portile2 (v2.2.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.10.3, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.12.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.6.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.0.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
@@ -69,7 +77,9 @@
     <orderEntry type="library" scope="PROVIDED" name="nori (v2.6.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nyaplot (v0.1.6, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="oauth2 (v1.4.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pdf-core (v0.7.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.21.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="prawn (v2.2.2, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v2.0.5, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.0.3, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.3, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
@@ -84,6 +94,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.2.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.4, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.6, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ttfunk (v1.5.1, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.3, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="wasabi (v3.5.0, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.6.5, RVM: ruby-2.4.1 [skag_server_rails_app2.4.1]) [gem]" level="application" />
